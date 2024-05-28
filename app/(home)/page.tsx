@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import About from "./components/About";
 import Tech from "./components/Tech";
-import Project from "./components/Project";
+import Projects from "./components/Projects";
 import Guest from "./components/Guest";
 
 const Home: NextPage = () => {
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <main>
       <About />
       <Tech />
-      <Project />
+      <Projects />
       <Guest />
     </main>
   );
