@@ -7,7 +7,15 @@
     @apply max-w-screen-lg mx-auto;
   }
 
+  .section-layout {
+    @apply min-h-screen
+  }
+
   .highlight {
     background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
+  }
+
+  .global-px {
+    @apply px-2
   }
 }
