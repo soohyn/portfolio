@@ -8,7 +8,6 @@ interface NavItemProps {
   y: number;
 }
 
-
 const NavItem: FC<NavItemProps> = ({ label, sectionId, y }) => {
   const [selected, setSelected] = useState<boolean>(false);
 

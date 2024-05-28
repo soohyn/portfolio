@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from "react";
 import NavItem from "./NavItem";
 import { removeAllListeners } from "process";
 import Link from "next/link";
+import ProgressBar from "./ProgressBar";
 
 export type SectionId = "about" | "tech" | "guest" | "projects";
 interface NavItemData {
@@ -27,7 +28,7 @@ const Header: FC = () => {
   };
 
   useEffect(() => {
-    addEventListener("scroll", getScroll);
+    window.addEventListener("scroll", getScroll);
 
     return () => {
       removeAllListeners();
@@ -47,6 +48,7 @@ const Header: FC = () => {
 
   return (
     <header className="bg-white fixed top-0 w-full">
+      <ProgressBar y={scrollY} />
       <div className="layout flex flex-row w-full py-3 global-px items-center select-none">
         <Link href={"/"}>
           <h1 className="highlight text-2xl font-extrabold">Soohyn,</h1>
