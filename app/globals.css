@@ -8,7 +8,7 @@
   }
 
   .section-layout {
-    @apply min-h-screen
+    @apply min-h-screen;
   }
 
   .highlight {
@@ -16,6 +16,10 @@
   }
 
   .global-px {
-    @apply px-2
+    @apply px-2;
+  }
+
+  nav > ul > li {
+    @apply font-semibold text-gray-700 cursor-pointer transition-all hover:text-gray-400 active:scale-95;
   }
 }
