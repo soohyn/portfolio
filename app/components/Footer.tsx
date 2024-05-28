@@ -2,8 +2,10 @@ import { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-black text-white w-full">
-      <div className="flex layout w-full global-px">footer</div>
+    <footer className="bg-black text-white w-full pt-16 pb-20">
+      <div className="flex layout w-full global-px">
+        <span className="text-sm">Copyright © 2024 Soohyeon Jo All rights reserved.</span>
+      </div>
     </footer>
   );
 };

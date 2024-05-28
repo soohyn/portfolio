@@ -16,7 +16,7 @@
   }
 
   .global-px {
-    @apply px-2;
+    @apply px-4;
   }
 
   nav > ul > li {
