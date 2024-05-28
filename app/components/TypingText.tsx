@@ -15,13 +15,13 @@ const TypingText: FC<TypingTextProps> = ({ text }) => {
     const interval = setInterval(() => {
       if (count <= 0) {
         clearInterval(interval);
-        return
+        return;
       }
 
       setDisplayedText((prev) => {
         return text.slice(0, prev.length + 1);
       });
-      
+
       count--;
     }, 100);
 
