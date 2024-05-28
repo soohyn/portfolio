@@ -49,7 +49,7 @@ const Header: FC = () => {
   return (
     <header className="bg-white fixed top-0 w-full">
       <ProgressBar y={scrollY} />
-      <div className="layout flex flex-row w-full py-3 global-px items-center select-none">
+      <div className="layout flex flex-row py-3 items-center select-none">
         <Link href={"/"}>
           <h1 className="highlight text-xl font-extrabold">Soohyn,</h1>
         </Link>
