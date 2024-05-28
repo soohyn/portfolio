@@ -1,4 +1,3 @@
-import exp from "constants";
 import { FC } from "react";
 
 const Tech: FC = () => {
