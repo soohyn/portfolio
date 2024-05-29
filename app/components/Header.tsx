@@ -52,10 +52,12 @@ const Header: FC = () => {
       <ProgressBar y={scrollY} />
       <div className="layout flex flex-row py-3 items-center select-none">
         <Link href={"/"}>
-          <h1 className="text-xl font-extrabold">Soohyn,</h1>
+          <h1 className="text-xl sm:text-2xl font-extrabold">Soohyn,</h1>
         </Link>
         <nav className="px-7">
-          <ul className="flex flex-row gap-4">{navItemMap}</ul>
+          <ul className="flex flex-row gap-4 invisible sm:visible">
+            {navItemMap}
+          </ul>
         </nav>
         <div></div>
       </div>
