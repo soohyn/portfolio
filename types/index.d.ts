@@ -1,0 +1,7 @@
+interface Project {
+
+}
+
+interface Career {
+  
+}
