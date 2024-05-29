@@ -9,16 +9,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Soohyn, portfolio",
   description: "soohyn's developer portfolio",
+  icons:{
+    icon: '/images/icon.png'
+  }
 };
 
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 
 const pretendard = localFont({
-  src: '../public/fonts/PretendardVariable.woff2',
-  display: 'swap',
-  weight: '45 920',
+  src: "../public/fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
   variable: "--font-pretendard",
-})
+});
 
 export default function RootLayout({
   children,
@@ -27,6 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${pretendard.variable}`}>
+      <link
+        rel="icon"
+        href="/images/icon.png"
+        type="image/icon.png"
+        sizes="any"
+      />
       <body className={inter.className}>
         <Header />
         {children}
