@@ -6,7 +6,7 @@ import { removeAllListeners } from "process";
 import Link from "next/link";
 import ProgressBar from "./ProgressBar";
 
-export type SectionId = "about" | "tech" | "guest" | "projects";
+export type SectionId = "about" | "tech" | "career" | "guest" | "projects";
 interface NavItemData {
   label: string;
   id: SectionId;
@@ -15,6 +15,7 @@ interface NavItemData {
 const navItemData: NavItemData[] = [
   { label: "About", id: "about" },
   { label: "Tech", id: "tech" },
+  { label: "Career", id: "career" },
   { label: "Projects", id: "projects" },
   { label: "Guest", id: "guest" },
 ];
