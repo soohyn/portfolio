@@ -14,7 +14,7 @@ export const profile = {
   mail_addr: GMAIL_ADDR,
 };
 
-export const skill = [
+export const skills = [
   { name: "ReactJS" },
   { name: "NextJS" },
   { name: "JavaScript" },
@@ -22,7 +22,7 @@ export const skill = [
   { name: "MongoDB" },
 ];
 
-export const studyTech = [
+export const studySkills = [
   { name: "React Native" },
   { name: "Supabase" },
   { name: "Firebase" },
