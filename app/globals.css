@@ -16,7 +16,7 @@
   }
 
   .section-layout {
-    @apply min-h-screen;
+    @apply min-h-screen py-40;
   }
 
   nav > ul > li {

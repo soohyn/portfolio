@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const About: FC = () => {
   return (
-    <section id="about-section" className="flex flex-col py-40  section-layout">
+    <section id="about-section" className="flex flex-col section-layout">
       <div className="layout flex flex-col items-center justify-center">
         <Terminal />
         <div className="flex flex-col pt-20 items-center text-center text-gray-800">
