@@ -12,7 +12,8 @@ const Terminal: FC = () => {
       </div>
       <div className="p-2 text-white text-3xl h-full select-none">
         <span className="text-[#67ed1f] font-bold mr-2">{">"}</span>
-        <TypingText text="Hello, World!" />
+        <TypingText text="Hello, World!" intervalMs={200} />
+        <span className="pl-1">{'_'}</span>
       </div>
     </div>
   );

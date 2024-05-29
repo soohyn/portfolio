@@ -4,9 +4,10 @@ import { FC, useEffect, useState } from "react";
 
 interface TypingTextProps {
   text: string;
+  intervalMs:number;
 }
 
-const TypingText: FC<TypingTextProps> = ({ text }) => {
+const TypingText: FC<TypingTextProps> = ({ text, intervalMs }) => {
   const [displayedText, setDisplayedText] = useState<string>("");
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const TypingText: FC<TypingTextProps> = ({ text }) => {
       });
 
       count--;
-    }, 100);
+    }, intervalMs);
 
     return () => {
       clearInterval(interval);
