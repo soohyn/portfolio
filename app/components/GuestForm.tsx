@@ -25,7 +25,7 @@ const GuestForm: FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmitForm} className="flex flex-col p-6 sm:p-10 bg-amber-100/50 rounded-lg backdrop-blur-xl gap-4 w-full guest-form-inner-shadow ">
+    <form onSubmit={onSubmitForm} className="flex flex-col p-5 sm:p-7 bg-amber-100/50 rounded-lg backdrop-blur-xl gap-3 w-full guest-form-inner-shadow ">
       <input name="name" placeholder="name" className="" type="text" />
       <input name="email" placeholder="email" className="" type="email" />
       <input
