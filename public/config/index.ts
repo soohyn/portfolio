@@ -61,11 +61,11 @@ export const toolSkill: Skill[] = [
 export const career: Career[] = [
   {
     company: "마포구청",
-    maskingName: "M구청",
+    maskingName: "M사",
     level: "계약직",
     startDate: "202103",
     endDate: "202108",
-    jos: ["웹 / 앱 프론트엔드 개발"],
+    jobs: ["웹 / 앱 프론트엔드 개발"],
     skills: ["Kotlin", "React", "Javascript", "Typescript"],
   },
   {
@@ -74,7 +74,7 @@ export const career: Career[] = [
     level: "정규직",
     startDate: "202108",
     endDate: "202310",
-    jos: [
+    jobs: [
       "웹 / 앱 프론트엔드 개발",
       "사내 어드민 관리 페이지 개발",
       "데이터 전처리 시스템 프론트엔드 개발",
@@ -87,7 +87,7 @@ export const career: Career[] = [
     level: "계약직",
     startDate: "202310",
     endDate: "202408",
-    jos: ["블록체인 개발 부트캠프 보조 강사, 프론트엔드 담당"],
+    jobs: ["블록체인 개발 부트캠프 보조 강사, 프론트엔드 담당"],
     skills: ["ReactJS", "NextJS", "Javascript", "Typescript", "Solidity"],
   },
 ];
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     deploy: "Vercel",
     tech: ["express", "react", "prisma", "planet scale", "tailwindcss"],
     thumbnail: "",
-    isTeamProject: false,
+    isTeam: false,
   },
   {
     name: "블로그",
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     deploy: "Github pages",
     tech: ["nextjs@14", "contentlayer"],
     thumbnail: "",
-    isTeamProject: false,
+    isTeam: false,
   },
   {
     name: "청첩장",
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     deploy: "Vercel",
     tech: ["react", "styled-component", "react-redux"],
     thumbnail: "",
-    isTeamProject: false,
+    isTeam: false,
   },
   {
     name: "포트폴리오",
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     deploy: "Vercel",
     tech: ["nextjs@14", "tailwindcss"],
     thumbnail: "",
-    isTeamProject: true,
+    isTeam: false,
   },
   {
     name: "세모이 SEMOi",
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     deploy: "Vercel",
     tech: ["react", "styled-component", "tailwindcss", "pwa"],
     thumbnail: "",
-    isTeamProject: true,
+    isTeam: true,
   },
   {
     name: "인생네컷",
@@ -146,6 +146,6 @@ export const projects: Project[] = [
     deploy: "Vercel",
     tech: ["react", "styled-component", "electron", "react-redux"],
     thumbnail: "",
-    isTeamProject: false,
+    isTeam: false,
   },
 ];
