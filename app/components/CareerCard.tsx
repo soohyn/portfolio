@@ -50,7 +50,8 @@ const CareerCard: FC<CareerCardProps> = ({ career, isLast, idx }) => {
           <span className="font-semibold text-lg">{career.maskingName}</span>
           <Tag
             text={career.level}
-            theme={career.level === "계약직" ? "gray" : "amber"}
+            bgTheme={career.level === "계약직" ? "bg-gray-200" : "bg-amber-200"}
+            textTheme={career.level === "계약직" ? "text-gray-600" : "text-amber-600"}
           />
         </div>
 

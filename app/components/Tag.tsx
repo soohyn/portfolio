@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
 import { FC } from "react";
 
 interface Tag {
   text: string;
-  theme: 'amber' | 'gray' | 'rose'
+  bgTheme: string;
+  textTheme: string;
 }
 
-const Tag: FC<Tag> = ({ text, theme }) => {
+const Tag: FC<Tag> = ({ text, bgTheme, textTheme }) => {
   return (
-    <div className={`py-[2px] px-[8px] bg-${theme}-200 rounded-xl`}>
-      <span className={`text-sm text-${theme}-800`}>{text}</span>
+    <div className={`py-[2px] px-[8px] rounded-xl ${bgTheme}`}>
+      <span className={`text-xs ${textTheme} line-clamp-1`}>{text}</span>
     </div>
   );
 };
