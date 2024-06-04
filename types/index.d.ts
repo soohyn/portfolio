@@ -16,6 +16,8 @@ interface Career {
   endDate: string;
   jobs: string[];
   skills: string[];
+  position: string;
+  team: string;
 }
 
 interface Skill {

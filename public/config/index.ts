@@ -58,16 +58,15 @@ export const toolSkill: Skill[] = [
   { name: "Postman" },
 ];
 
-
-export const certificate = [
-  { name: "정보처리기사" },
-];
+export const certificate = [{ name: "정보처리기사" }];
 
 export const career: Career[] = [
   {
     company: "마포구청",
     maskingName: "M사",
     level: "계약직",
+    team: "개발팀",
+    position: "frontend developer",
     startDate: "202103",
     endDate: "202108",
     jobs: ["웹 / 앱 프론트엔드 개발"],
@@ -77,6 +76,8 @@ export const career: Career[] = [
     company: "주식회사 왓섭",
     maskingName: "W사",
     level: "정규직",
+    team: "개발팀",
+    position: "frontend developer",
     startDate: "202108",
     endDate: "202310",
     jobs: [
@@ -90,6 +91,8 @@ export const career: Career[] = [
     company: "멋쟁이사자처럼",
     maskingName: "L사",
     level: "계약직",
+    team: "블록체인팀",
+    position: "프론트엔드 보조강사",
     startDate: "202310",
     endDate: "202408",
     jobs: ["블록체인 개발 부트캠프 보조 강사, 프론트엔드 담당"],
