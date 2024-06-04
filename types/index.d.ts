@@ -24,3 +24,13 @@ interface Skill {
   name: string;
   image?: string;
 }
+
+interface Guest {
+  id: string;
+  createdAt: number;
+  updatedAt: number;
+  name: string;
+  email: string;
+  password: string;
+  message: string;
+}

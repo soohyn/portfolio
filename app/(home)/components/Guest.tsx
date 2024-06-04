@@ -1,9 +1,44 @@
+"use client";
 import GuestForm from "@/app/components/GuestForm";
+import GuestList from "@/app/components/GuestList";
 import HighlightingText from "@/app/components/HighlightingText";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+
+const dummy: Guest[] = [
+  {
+    id: "id",
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+    name: "조구미",
+    password: "soo",
+    email: "sooheyonjo@gmail.com",
+    message: "안녕하세요~!",
+  },
+  {
+    id: "id",
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+    name: "조굼",
+    password: "hyn",
+    email: "soo@gmail.com",
+    message: "프론트엔드 개발자 화이팅!",
+  },
+];
 
 const Guest: FC = () => {
+  const [guests, setGuests] = useState<Guest[]>([]);
 
+  const prepare = async () => {
+    try {
+      setGuests(dummy);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    prepare();
+  }, []);
 
   return (
     <section id="guest-section" className="bg-amber-50/20 section-layout">
@@ -12,12 +47,9 @@ const Guest: FC = () => {
           <HighlightingText text="Guest" />
         </h2>
 
-        <div className="flex flex-col sm:flex-row mt-20 gap-10 w-full">
-         <GuestForm />
-
-          <ul className="flex flex-col w-full">
-            <span className="text-2xl self-center">🌼 🌻 🌼 🌻 🌼</span>
-          </ul>
+        <div className="flex flex-col md:flex-row mt-20 gap-12 w-full">
+          <GuestForm />
+          <GuestList guests={guests} />
         </div>
       </div>
     </section>

@@ -52,6 +52,10 @@
     @apply text-4xl sm:text-6xl font-bold select-none;
   }
 
+  .icon-button-style{
+    @apply transition-all hover:text-gray-400 active:scale-95 py-1 px-1;
+  }
+
   nav > ul > li {
     @apply font-semibold text-gray-700 cursor-pointer transition-all hover:text-gray-400 active:scale-95;
   }
