@@ -3,7 +3,7 @@ interface Project {
   description: string;
   url: string;
   deploy: string;
-  tech: string[];
+  skills: string[];
   thumbnail: string;
   isTeam: boolean;
 }

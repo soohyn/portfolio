@@ -15,17 +15,17 @@ export const profile = {
 };
 
 export const skills: Skill[] = [
-  { name: "ReactJS", image: "../images/reactjs.png" },
-  { name: "NextJS", image: "../images/nextjs.png" },
-  { name: "JavaScript", image: "../images/javascript.png" },
-  { name: "TypeScript", image: "../images/typescript.png" },
-  { name: "MongoDB", image: "../images/mongodb.png" },
+  { name: "ReactJS", image: "/images/reactjs.png" },
+  { name: "NextJS", image: "/images/nextjs.png" },
+  { name: "JavaScript", image: "/images/javascript.png" },
+  { name: "TypeScript", image: "/images/typescript.png" },
+  { name: "MongoDB", image: "/images/mongodb.png" },
 ];
 
 export const styleSkill: Skill[] = [
-  { name: "Styled Component", image: "../images/reactjs.png" },
-  { name: "Tailwind", image: "../images/reactjs.png" },
-  { name: "Sass/Scss", image: "../images/reactjs.png" },
+  { name: "Styled Component", image: "images/reactjs.png" },
+  { name: "Tailwind", image: "images/reactjs.png" },
+  { name: "Sass/Scss", image: "images/reactjs.png" },
 ];
 
 export const studySkills: Skill[] = [
@@ -106,8 +106,8 @@ export const projects: Project[] = [
     description: "로그인/회원가입, 댓글 기능이 구현되어 있는 게시판입니다.",
     url: "https://express-react-board-pi.vercel.app/",
     deploy: "Vercel",
-    tech: ["express", "react", "prisma", "planet scale", "tailwindcss"],
-    thumbnail: "",
+    skills: ["express", "react", "prisma", "planet scale", "tailwindcss"],
+    thumbnail: "/images/javascript",
     isTeam: false,
   },
   {
@@ -115,8 +115,8 @@ export const projects: Project[] = [
     description: "마크다운 언어로 작성된 글을 보여주는 블로그입니다.",
     url: "https://soohyn.github.io",
     deploy: "Github pages",
-    tech: ["nextjs@14", "contentlayer"],
-    thumbnail: "",
+    skills: ["nextjs@14", "contentlayer"],
+    thumbnail: "/images/javascript",
     isTeam: false,
   },
   {
@@ -125,8 +125,8 @@ export const projects: Project[] = [
       "로그인/회원가입 기능으로 직접 청첩장을 만들 수 있는 페이지 입니다.",
     url: "",
     deploy: "Vercel",
-    tech: ["react", "styled-component", "react-redux"],
-    thumbnail: "",
+    skills: ["react", "styled-component", "react-redux"],
+    thumbnail: "/images/javascript",
     isTeam: false,
   },
   {
@@ -134,8 +134,8 @@ export const projects: Project[] = [
     description: "개발자 포트폴리오 입니다. 현재 보고있는 페이지 입니다",
     url: "https://soohyn.com",
     deploy: "Vercel",
-    tech: ["nextjs@14", "tailwindcss"],
-    thumbnail: "",
+    skills: ["nextjs@14", "tailwindcss"],
+    thumbnail: "/images/javascript",
     isTeam: false,
   },
   {
@@ -143,8 +143,8 @@ export const projects: Project[] = [
     description: "스포츠센터 강사들의 후기를 작성하는 웹 앱 입니다.",
     url: "",
     deploy: "Vercel",
-    tech: ["react", "styled-component", "tailwindcss", "pwa"],
-    thumbnail: "",
+    skills: ["react", "styled-component", "tailwindcss", "pwa"],
+    thumbnail: "/images/javascript",
     isTeam: true,
   },
   {
@@ -152,8 +152,8 @@ export const projects: Project[] = [
     description: "데스크탑에서도 촬영하는 인생네컷",
     url: "",
     deploy: "Vercel",
-    tech: ["react", "styled-component", "electron", "react-redux"],
-    thumbnail: "",
+    skills: ["react", "styled-component", "electron", "react-redux"],
+    thumbnail: "/images/javascript",
     isTeam: false,
   },
 ];
