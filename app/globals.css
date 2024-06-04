@@ -37,7 +37,7 @@
   }
 
   .skill-box {
-    @apply bg-white flex flex-row flex-wrap gap-8 sm:gap-10  p-4 sm:p-8 rounded-lg inner-shadow mt-3 font-semibold text-gray-600 items-center justify-center;
+    @apply bg-white flex flex-row flex-wrap gap-8 p-4 sm:p-8 rounded-lg inner-shadow mt-3 font-semibold text-gray-500 items-center justify-center;
   }
 
   .section-header {
