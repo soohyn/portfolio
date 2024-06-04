@@ -24,6 +24,10 @@
     box-shadow: inset 0 0 1px 0 rgb(0 0 0 / 0.3);
   }
 
+  .header-inner-shadow {
+    box-shadow: inset 0 0 1px 0 rgb(0 0 0 / 0.1);
+  }
+
   .section-layout {
     @apply py-40;
   }
