@@ -5,6 +5,7 @@
 @layer components {
   :root {
     @apply text-gray-800;
+    scroll-behavior: smooth;
   }
 
   .highlight {
