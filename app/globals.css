@@ -7,6 +7,11 @@
     @apply text-gray-800;
     scroll-behavior: smooth;
   }
+  
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 
   .highlight {
     background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff60);
