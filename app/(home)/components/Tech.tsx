@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const Tech: FC = () => {
   return (
-    <section id="tech-section" className="bg-stone-50 section-layout">
+    <section id="tech-section" className="bg-gray-50 section-layout">
       <div className="flex flex-col layout items-center">
         <h2 className="section-header">Tech</h2>
 
