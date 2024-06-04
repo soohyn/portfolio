@@ -14,16 +14,23 @@ export const profile = {
   mail_addr: GMAIL_ADDR,
 };
 
-export const skills = [
-  { name: "ReactJS" },
-  { name: "NextJS" },
-  { name: "JavaScript" },
-  { name: "TypeScript" },
-  { name: "MongoDB" },
+export const skills: Skill[] = [
+  { name: "ReactJS", image: "../images/reactjs.png" },
+  { name: "NextJS", image: "../images/nextjs.png" },
+  { name: "JavaScript", image: "../images/javascript.png" },
+  { name: "TypeScript", image: "../images/typescript.png" },
+  { name: "MongoDB", image: "../images/mongodb.png" },
 ];
 
-export const studySkills = [
+export const styleSkill: Skill[] = [
+  { name: "Styled Component", image: "../images/reactjs.png" },
+  { name: "Tailwind", image: "../images/reactjs.png" },
+  { name: "Sass/Scss", image: "../images/reactjs.png" },
+];
+
+export const studySkills: Skill[] = [
   { name: "React Native" },
+  { name: "Redux" },
   { name: "Supabase" },
   { name: "Firebase" },
   { name: "Express" },
@@ -37,12 +44,33 @@ export const studySkills = [
   { name: "Java" },
   { name: "Computer Science" },
   { name: "Solidity" },
+  { name: "Kotlin" },
+  { name: "AWS" },
+];
+
+export const toolSkill: Skill[] = [
+  { name: "Figma" },
+  { name: "Git" },
+  { name: "Slack" },
+  { name: "Discord" },
+  { name: "Notion" },
+  { name: "Vercel" },
+  { name: "Postman" },
 ];
 
 export const career: Career[] = [
   {
+    company: "마포구청",
+    maskingName: "M구청",
+    level: "계약직",
+    startDate: "202103",
+    endDate: "202108",
+    jos: ["웹 / 앱 프론트엔드 개발"],
+    skills: ["Kotlin", "React", "Javascript", "Typescript"],
+  },
+  {
     company: "주식회사 왓섭",
-    maskingName:"W사",
+    maskingName: "W사",
     level: "정규직",
     startDate: "202108",
     endDate: "202310",
@@ -55,13 +83,11 @@ export const career: Career[] = [
   },
   {
     company: "멋쟁이사자처럼",
-    maskingName:"L사",
+    maskingName: "L사",
     level: "계약직",
     startDate: "202310",
     endDate: "202408",
-    jos: [
-      "블록체인 개발 부트캠프 보조 강사, 프론트엔드 담당",
-    ],
+    jos: ["블록체인 개발 부트캠프 보조 강사, 프론트엔드 담당"],
     skills: ["ReactJS", "NextJS", "Javascript", "Typescript", "Solidity"],
   },
 ];

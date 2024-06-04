@@ -26,7 +26,10 @@ const ProgressBar: FC<ProgressBarProps> = ({ y }) => {
 
   return (
     <div className="bg-yellow-100 w-full h-2">
-      <div className={`bg-yellow-500 h-2 transition-all duration-0 ease-in-out`} style={{ width: `${per}%` }}></div>
+      <div
+        className={`bg-yellow-500 h-2 transition-all duration-0 ease-in-out`}
+        style={{ width: `${per}%` }}
+      ></div>
     </div>
   );
 };

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  :root {
+    @apply text-gray-800;
+  }
+
   .highlight {
     background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
   }
@@ -15,8 +19,24 @@
     @apply w-full max-w-screen-lg mx-auto global-px;
   }
 
+  .inner-shadow {
+    box-shadow: inset 0 0 1px 0 rgb(0 0 0 / 0.3);
+  }
+
   .section-layout {
-    @apply min-h-screen py-40;
+    @apply py-40;
+  }
+
+  .skill-label {
+    @apply mt-10 text-xl font-semibold;
+  }
+
+  .skill-box {
+    @apply bg-white flex flex-row flex-wrap gap-8 sm:gap-10  p-4 sm:p-8 rounded-lg inner-shadow mt-5 font-semibold text-gray-600 items-center justify-center;
+  }
+
+  .section-header {
+    @apply text-4xl sm:text-6xl font-bold highlight;
   }
 
   nav > ul > li {
