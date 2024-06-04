@@ -48,7 +48,7 @@ const Header: FC = () => {
   });
 
   return (
-    <header className=" backdrop-blur-md fixed top-0 w-full z-20 header-inner-shadow">
+    <header className={`backdrop-blur-md fixed top-0 w-full z-20 transition-all ${scrollY > 0 && 'header-inner-shadow'}`}>
       <ProgressBar y={scrollY} />
       <div className="layout flex flex-row py-3 items-center select-none">
         <Link href={"/"}>
