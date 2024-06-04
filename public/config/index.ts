@@ -58,6 +58,11 @@ export const toolSkill: Skill[] = [
   { name: "Postman" },
 ];
 
+
+export const certificate = [
+  { name: "정보처리기사" },
+];
+
 export const career: Career[] = [
   {
     company: "마포구청",

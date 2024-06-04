@@ -33,11 +33,11 @@
   }
 
   .skill-box {
-    @apply bg-white flex flex-row flex-wrap gap-8 sm:gap-10  p-4 sm:p-8 rounded-lg inner-shadow mt-5 font-semibold text-gray-600 items-center justify-center;
+    @apply bg-white flex flex-row flex-wrap gap-8 sm:gap-10  p-4 sm:p-8 rounded-lg inner-shadow mt-3 font-semibold text-gray-600 items-center justify-center;
   }
 
   .section-header {
-    @apply text-4xl sm:text-6xl font-bold highlight;
+    @apply text-4xl sm:text-6xl font-bold;
   }
 
   nav > ul > li {
