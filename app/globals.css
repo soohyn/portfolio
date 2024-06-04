@@ -9,7 +9,7 @@
   }
 
   .highlight {
-    background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
+    background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff60);
   }
 
   .global-px {
@@ -44,6 +44,6 @@
     @apply font-semibold text-gray-700 cursor-pointer transition-all hover:text-gray-400 active:scale-95;
   }
   nav > ul > .--selected {
-    @apply text-yellow-500 hover:text-orange-300;
+    @apply text-amber-500 hover:text-amber-300;
   }
 }
