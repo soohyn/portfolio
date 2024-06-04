@@ -31,10 +31,10 @@ const Modal: FC<ModalProps> = ({ isOpened, children, onClose }) => {
     <div
       className={`${
         isOpened ? "visible" : "invisible"
-      } backdrop-blur-lg flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 z-10`}
+      } backdrop-blur-md flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 z-10`}
       onClick={onClickClose}
     >
-      <div className="bg-white p-10">{children}</div>
+      <div className="bg-white p-10 ">{children}</div>
     </div>
   );
 };
