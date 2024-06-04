@@ -11,9 +11,9 @@
   .highlight {
     background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff60);
   }
-  
+
   .highlight-pen {
-    @apply bg-yellow-300 absolute h-[16px] sm:h-[28px] right-0 bottom-2 sm:bottom-3 -right-4 rounded-md
+    @apply bg-yellow-300 absolute h-[16px] sm:h-[28px] right-0 bottom-2 sm:bottom-3 -right-4 rounded-md;
   }
 
   .global-px {
@@ -52,7 +52,7 @@
     @apply text-4xl sm:text-6xl font-bold select-none;
   }
 
-  .icon-button-style{
+  .icon-button-style {
     @apply transition-all hover:text-gray-400 active:scale-95 py-1 px-1;
   }
 
@@ -64,18 +64,18 @@
   }
 
   .input-style {
-    @apply px-3 py-2 rounded-sm outline-none transition-all border-2 border-transparent focus:border-amber-200
+    @apply px-3 py-2 rounded-sm outline-none transition-all border-2 border-transparent focus:border-amber-200;
   }
 
   form > input {
-    @apply input-style
+    @apply input-style;
   }
 
   form > textarea {
-    @apply input-style
+    @apply input-style resize-none;
   }
 
-  form > input[type=submit] {
-    @apply cursor-pointer bg-amber-200 text-amber-500 font-semibold text-lg transition-all hover:bg-amber-100 active:scale-95 focus:border-amber-400
+  form > input[type="submit"] {
+    @apply cursor-pointer bg-amber-200 text-amber-500 font-semibold text-lg transition-all hover:bg-amber-100 active:scale-95 focus:border-amber-400;
   }
 }
