@@ -49,7 +49,7 @@
   }
 
   .section-header {
-    @apply text-4xl sm:text-6xl font-bold;
+    @apply text-4xl sm:text-6xl font-bold select-none;
   }
 
   nav > ul > li {
@@ -71,7 +71,7 @@
     @apply input-style
   }
 
-  form > input[type=button] {
+  form > input[type=submit] {
     @apply cursor-pointer bg-amber-200 text-amber-500 font-semibold text-lg transition-all hover:bg-amber-100 active:scale-95 focus:border-amber-400
   }
 }
