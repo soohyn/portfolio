@@ -11,6 +11,10 @@
   .highlight {
     background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff60);
   }
+  
+  .highlight-pen {
+    @apply bg-yellow-300 absolute h-[16px] sm:h-[28px] right-0 bottom-2 sm:bottom-3 -right-4 rounded-md
+  }
 
   .global-px {
     @apply px-4;
@@ -26,6 +30,10 @@
 
   .header-inner-shadow {
     box-shadow: inset 0 0 1px 0 rgb(0 0 0 / 0.1);
+  }
+
+  .guest-form-inner-shadow {
+    box-shadow: inset 0 0 1px 0 rgb(245 158 11 / 0.48);
   }
 
   .section-layout {
@@ -49,5 +57,21 @@
   }
   nav > ul > .--selected {
     @apply text-amber-500 hover:text-amber-300;
+  }
+
+  .input-style {
+    @apply px-3 py-2 rounded-sm outline-none transition-all border-2 border-transparent focus:border-amber-200
+  }
+
+  form > input {
+    @apply input-style
+  }
+
+  form > textarea {
+    @apply input-style
+  }
+
+  form > input[type=button] {
+    @apply cursor-pointer bg-amber-200 text-amber-500 font-semibold text-lg transition-all hover:bg-amber-100 active:scale-95 focus:border-amber-400
   }
 }

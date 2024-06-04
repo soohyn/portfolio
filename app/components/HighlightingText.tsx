@@ -6,10 +6,11 @@ interface HighlightingTextProps {
 
 const HighlightingText: FC<HighlightingTextProps> = ({ text }) => {
   return (
-    <div className='relative'>
+    <div className="relative">
       <span className="absolute top-0 left-0 z-10">{text}</span>
       <span className=" text-transparent">{text}</span>
-      <div className="bg-yellow-200 absolute top-3 right-0 bottom-3 left-0"></div>
+      <div className="highlight-pen -left-2  opacity-60"></div>
+      <div className="highlight-pen w-[8px]  opacity-85"></div>
     </div>
   );
 };
