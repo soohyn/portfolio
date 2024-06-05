@@ -20,18 +20,19 @@ export const skills: Skill[] = [
   { name: "JavaScript", image: "/images/javascript.png" },
   { name: "TypeScript", image: "/images/typescript.png" },
   { name: "MongoDB", image: "/images/mongodb.png" },
+  { name: "Supabase", image: "/images/supabase.png" },
+  { name: "Redux", image: "/images/redux.png" },
 ];
 
 export const styleSkill: Skill[] = [
-  { name: "Styled Component", image: "images/reactjs.png" },
-  { name: "Tailwind", image: "images/reactjs.png" },
-  { name: "Sass/Scss", image: "images/reactjs.png" },
+  { name: "Styled Component", image: "images/styled-components.png" },
+  { name: "Tailwind", image: "images/tailwind.png" },
+  { name: "Sass/Scss", image: "images/sass.png" },
 ];
 
 export const studySkills: Skill[] = [
   { name: "React Native" },
-  { name: "Redux" },
-  { name: "Supabase" },
+  { name: "React Query" },
   { name: "Firebase" },
   { name: "Express" },
   { name: "Prisma" },
