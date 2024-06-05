@@ -4,6 +4,7 @@ import { FC } from "react";
 import { formatDate } from "../utils";
 import Tag from "./Tag";
 import Dot from "./Dot";
+import BorderTag from "./BorderTag";
 
 interface CareerCardProps {
   career: Career;
@@ -14,9 +15,7 @@ interface CareerCardProps {
 const CareerCard: FC<CareerCardProps> = ({ career, isLast, idx }) => {
   const skillsMap = career.skills.map((s, sIdx) => {
     return (
-      <div key={`${idx}-skill-${sIdx}`} className="flex px-2 py-1 border-2 text-xs text-gray-500 rounded-full">
-        <span key={`${idx}-${sIdx}`}>{s}</span>
-      </div>
+      <BorderTag key={`${idx}-${sIdx}`} text={s} />
     );
   });
 
