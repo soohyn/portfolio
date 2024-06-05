@@ -105,15 +105,6 @@ export const career: Career[] = [
 
 export const projects: Project[] = [
   {
-    name: "게시판",
-    description: "로그인/회원가입, 댓글 기능이 구현되어 있는 게시판입니다.",
-    url: "https://express-react-board-pi.vercel.app/",
-    deploy: "Vercel",
-    skills: ["express", "react", "prisma", "planet scale", "tailwindcss"],
-    thumbnail: "/images/icon.png",
-    isTeam: false,
-  },
-  {
     name: "블로그",
     description: "마크다운 언어로 작성된 글을 보여주는 블로그입니다.",
     url: "https://soohyn.github.io",
