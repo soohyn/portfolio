@@ -7,7 +7,7 @@ import Career from "./components/Career";
 
 const Home: NextPage = () => {
   return (
-    <main>
+    <main className="bg-white">
       <About />
       <Tech />
       <Career />

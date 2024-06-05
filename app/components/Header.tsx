@@ -22,11 +22,40 @@ const navItemData: NavItemData[] = [
 
 const Header: FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);
+  const [isTop, setIsTop] = useState<boolean>(true);
 
   const getScroll = () => {
     const y = window.scrollY;
     setScrollY(y);
   };
+
+  const checkIsTop = () => {
+    if (scrollY < window.innerHeight) {
+      setIsTop(true);
+    } else {
+      setIsTop(false);
+    }
+  };
+
+  const setBackgroundColor = () => {
+    const html = document.querySelector("html") as HTMLElement;
+
+    if (!html) return;
+
+    if (isTop) {
+      html.style.backgroundColor = "#fff";
+    } else {
+      html.style.backgroundColor = "#000";
+    }
+  };
+
+  useEffect(() => {
+    setBackgroundColor();
+  }, [isTop]);
+
+  useEffect(() => {
+    checkIsTop();
+  }, [scrollY]);
 
   useEffect(() => {
     window.addEventListener("scroll", getScroll);
