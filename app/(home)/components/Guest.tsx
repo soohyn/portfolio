@@ -41,7 +41,7 @@ const Guest: FC = () => {
   }, []);
 
   return (
-    <section id="guest-section" className="bg-amber-50/50 section-layout">
+    <section id="guest-section" className="section-layout">
       <div className="flex flex-col layout items-center">
         <h2 className="section-header">
           <HighlightingText text="Guest" />
