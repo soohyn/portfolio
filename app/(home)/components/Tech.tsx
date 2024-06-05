@@ -9,6 +9,24 @@ import {
 import { FC } from "react";
 
 const Tech: FC = () => {
+  const skillsMap = skills.map((skill, idx) => {
+    return (
+      <div
+        key={`skill-${skill.name}-${idx}`}
+        className="flex flex-col items-center"
+      >
+        <div className="h-[56px] sm:h-[80px]">
+          <img
+            src={skill.image}
+            alt={skill.name}
+            className="h-full object-cover"
+          />
+        </div>
+        {/* <span className="mt-4">{skill.name}</span> */}
+      </div>
+    );
+  });
+
   return (
     <section id="tech-section" className="bg-gray-50 section-layout">
       <div className="flex flex-col layout items-center">
@@ -16,25 +34,7 @@ const Tech: FC = () => {
           <HighlightingText text={"Tech"} />
         </h2>
 
-        <div className="skill-box mt-20">
-          {skills.map((skill, idx) => {
-            return (
-              <div
-                key={`skill-${skill.name}-${idx}`}
-                className="flex flex-col items-center"
-              >
-                <div className="h-[56px] sm:h-[80px]">
-                  <img
-                    src={skill.image}
-                    alt={skill.name}
-                    className="h-full object-cover"
-                  />
-                </div>
-                {/* <span className="mt-4">{skill.name}</span> */}
-              </div>
-            );
-          })}
-        </div>
+        <div className="skill-box mt-20">{skillsMap}</div>
 
         <span className="skill-label">Style</span>
         <div className="skill-box">
