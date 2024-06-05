@@ -15,7 +15,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
   return (
     <li
-      className={`flex flex-col w-full bg-white rounded-lg inner-shadow overflow-hidden transition-all cursor-pointer active:scale-[98%] relative`}
+      className={`flex flex-col w-full bg-white rounded-sm inner-shadow transition-all cursor-pointer active:scale-[98%] relative postit-shadow`}
     >
       <div className="flex w-full h-[120px] relative bg-amber-100">
         <Image
@@ -44,7 +44,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
           })}
         </ul>
       </div>
-
+      <div className=" w-[120px] h-[40px] absolute -top-4 left-[38%] bg-white shadow-sm shadow-inner opacity-50"></div>
       <div className="flex justify-center items-center absolute top-0 left-0 right-0 bg-white bottom-0 opacity-0 hover:opacity-40 transition-all "></div>
     </li>
   );
