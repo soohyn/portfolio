@@ -7,7 +7,7 @@
     @apply text-gray-800;
     scroll-behavior: smooth;
   }
-  
+
   .bg-clip-text {
     -webkit-background-clip: text;
     background-clip: text;
@@ -41,8 +41,8 @@
     box-shadow: inset 0 0 1px 0 rgb(245 158 11 / 0.48);
   }
 
-  .postit-shadow{
-    box-shadow: 8px 8px 2px -2px rgba(192, 192, 192, 0.2)
+  .postit-shadow {
+    box-shadow: 8px 8px 2px -2px rgba(192, 192, 192, 0.2);
   }
 
   .section-layout {
