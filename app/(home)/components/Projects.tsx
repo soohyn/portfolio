@@ -11,7 +11,7 @@ const Projects: FC = () => {
           <HighlightingText text="Project" />
         </h2>
 
-        <ul className="grid md:grid-cols-2 w-full mt-20 gap-x-8 gap-y-16">
+        <ul className="grid sm:grid-cols-2 w-full mt-20 gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16">
           {projects.map((p, idx) => {
             return <ProjectCard key={`project-${idx}`} project={p} idx={idx} />;
           })}

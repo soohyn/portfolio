@@ -108,7 +108,7 @@ export const projects: Project[] = [
     url: "https://express-react-board-pi.vercel.app/",
     deploy: "Vercel",
     skills: ["express", "react", "prisma", "planet scale", "tailwindcss"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: false,
   },
   {
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     url: "https://soohyn.github.io",
     deploy: "Github pages",
     skills: ["nextjs@14", "contentlayer"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: false,
   },
   {
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     url: "",
     deploy: "Vercel",
     skills: ["react", "styled-component", "react-redux"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: false,
   },
   {
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     url: "https://soohyn.com",
     deploy: "Vercel",
     skills: ["nextjs@14", "tailwindcss", "supabase"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: false,
   },
   {
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     url: "",
     deploy: "Vercel",
     skills: ["react", "styled-component", "tailwindcss", "pwa"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: true,
   },
   {
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     url: "",
     deploy: "Vercel",
     skills: ["react", "styled-component", "electron", "react-redux"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: true,
   },
   {
@@ -163,7 +163,7 @@ export const projects: Project[] = [
     url: "",
     deploy: "",
     skills: ["React Native", "mongoDB"],
-    thumbnail: "/images/javascript",
+    thumbnail: "/images/icon.png",
     isTeam: false,
   },
 ];

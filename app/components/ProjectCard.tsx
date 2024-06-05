@@ -17,7 +17,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
     <li
       className={`bg-white flex flex-col w-full bg-white rounded-sm inner-shadow transition-all cursor-pointer hover:opacity-60 active:scale-[98%] relative postit-shadow`}
     >
-      <div className="flex w-full h-[120px] relative ">
+      <div className="flex w-full h-[200px] relative">
         <Image
           fill
           className="w-full h-full object-cover"
@@ -44,7 +44,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
           })}
         </ul>
       </div>
-      <div className=" w-[120px] h-[40px] absolute -top-5 left-[38%] bg-amber-100 shadow-sm shadow-inner opacity-50"></div>
+      <div className=" w-[120px] h-[40px] absolute -top-5 left-[38%] bg-amber-200 shadow-sm shadow-inner opacity-50"></div>
     </li>
   );
 };
