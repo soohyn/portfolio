@@ -84,7 +84,7 @@
   }
 
   .input-style {
-    @apply px-3 py-2 rounded-sm outline-none transition-all border-2 border-transparent focus:border-amber-200;
+    @apply px-3 py-2 rounded-sm outline-none transition-all border-2 border-transparent focus:border-gray-300;
   }
 
   form > input {
@@ -96,6 +96,6 @@
   }
 
   form > input[type="submit"] {
-    @apply cursor-pointer bg-amber-200 text-amber-500 font-semibold text-lg transition-all hover:bg-amber-100 active:scale-95 focus:border-amber-400;
+    @apply cursor-pointer mt-4 bg-gray-500 text-gray-50 font-semibold text-lg transition-all hover:bg-gray-400 active:scale-95 focus:bg-gray-400;
   }
 }
