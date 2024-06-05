@@ -20,33 +20,35 @@ export const skills: Skill[] = [
   { name: "JavaScript", image: "/images/javascript.png" },
   { name: "TypeScript", image: "/images/typescript.png" },
   { name: "MongoDB", image: "/images/mongodb.png" },
-  { name: "Supabase", image: "/images/supabase.png" },
-  { name: "Redux", image: "/images/redux.png" },
+  { name: "Supabase", image: "/images/supabase.svg" },
+  { name: "Redux", image: "/images/redux.svg" },
+
 ];
 
 export const styleSkill: Skill[] = [
   { name: "Styled Component", image: "images/styled-components.png" },
-  { name: "Tailwind", image: "images/tailwind.png" },
+  { name: "Tailwind", image: "images/tailwindcss.svg" },
   { name: "Sass/Scss", image: "images/sass.png" },
 ];
 
 export const studySkills: Skill[] = [
   { name: "React Native" },
   { name: "React Query" },
+  { name: "AWS" },
+  { name: "Solidity", image:"/images/solidity.svg" },
+  { name: "Electron", image:"/images/electron.svg" },
   { name: "Firebase" },
   { name: "Express" },
-  { name: "Prisma" },
   { name: "PWA" },
+  { name: "NodeJS" },
+  { name: "Prisma" },
+  { name: "Computer Science" },
   { name: "Planet Scale" },
   { name: "Python" },
-  { name: "NodeJS" },
   { name: "C" },
-  { name: "Electron" },
   { name: "Java" },
-  { name: "Computer Science" },
-  { name: "Solidity" },
   { name: "Kotlin" },
-  { name: "AWS" },
+
 ];
 
 export const toolSkill: Skill[] = [
