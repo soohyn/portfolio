@@ -25,7 +25,7 @@ const GuestItem: FC<GuestItemProps> = ({ guest }) => {
   };
 
   return (
-    <li className="flex flex-col text-gray-600">
+    <li className="flex flex-col text-gray-600 p-5 backdrop-blur-md">
       <div className="flex flex-row items-center justify-between">
         <div>
           <span className="text-lg font-bold">🌻 {guest.name}</span>
@@ -38,10 +38,10 @@ const GuestItem: FC<GuestItemProps> = ({ guest }) => {
         </button>
       </div>
 
-      <div className="flex flex-row items-center text-lg pl-1 mt-2 w-full">
+      <div className="flex flex-row text-lg pl-1 mt-2 w-full">
         <MdKeyboardArrowRight
-          size={20}
-          className="flex-shrink-0 border-transparent border-b-2"
+          size={24}
+          className="flex-shrink-0 border-transparent border-b-2 self-center"
         />
         <div className="flex flex-row px-1 w-full">
           {isEditMode ? (

@@ -47,7 +47,7 @@ const Guest: FC = () => {
           <HighlightingText text="Guest" />
         </h2>
 
-        <div className="flex flex-col md:flex-row mt-20 gap-12 w-full">
+        <div className="flex flex-col md:flex-row mt-20 gap-12  w-full">
           <GuestForm />
           <GuestList guests={guests} />
         </div>

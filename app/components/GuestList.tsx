@@ -7,7 +7,7 @@ interface GuestList {
 
 const GuestList: FC<GuestList> = ({ guests }) => {
   return (
-    <ul className="flex flex-col w-full gap-12">
+    <ul className="flex flex-col w-full gap-8">
       {guests.length <= 0 ? (
         <span className="text-2xl self-center mt-20">🌼 🌻 🌼 🌻 🌼</span>
       ) : (
