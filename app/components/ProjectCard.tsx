@@ -15,14 +15,15 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
   return (
     <li
-      className={`bg-white flex flex-col w-full bg-white rounded-sm inner-shadow transition-all cursor-pointer hover:opacity-60 active:scale-[98%] relative postit-shadow`}
+      className={`bg-white flex flex-col w-full bg-white rounded-sm inner-shadow transition-all cursor-pointer hover:opacity-60 active:scale-[98%] relative postit-shadow select-none`}
     >
       <div className="flex w-full h-[160px] sm:h-[200px] relative">
         <Image
           fill
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover select-none"
           src={project.thumbnail}
           alt={project.name}
+          draggable={false}
         />
       </div>
       <div className="flex flex-col p-4 gap-2">
