@@ -49,7 +49,7 @@ const Guest: FC = () => {
 
         <div className="flex flex-col md:flex-row mt-20 gap-12  w-full">
           <GuestForm />
-          <GuestList guests={guests} />
+          <GuestList guests={guests} setGuests={setGuests} />
         </div>
       </div>
     </section>

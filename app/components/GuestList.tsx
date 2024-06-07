@@ -1,13 +1,20 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import React, {
+  FC,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import GuestItem from "./GuestItem";
 import Modal from "./Modal";
 
 export type OnConfirm = (password: string) => Promise<void>;
 interface GuestList {
   guests: Guest[];
+  setGuests: React.Dispatch<SetStateAction<Guest[]>>;
 }
 
-const GuestList: FC<GuestList> = ({ guests }) => {
+const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
   const [onConfirm, setOnConfirm] = useState<OnConfirm>(async () => {});
@@ -17,10 +24,12 @@ const GuestList: FC<GuestList> = ({ guests }) => {
     setPassword("");
   };
 
-  // 모달을 열면서 파라미터로 confirm 버튼 클릭 시 동작을 저장한다.
+  // 모달을 열면서 파라미터로 confirm 버튼 클릭 시 동작을 받아 저장
   // guestItem에서 비밀번호를 받았으면 편했을 것...
   const openModal = (confirm: OnConfirm) => {
     setIsModalOpened(true);
+
+    //함수 저장 시 setState 구조상 아래와 같이 저장
     setOnConfirm(() => confirm);
   };
 
@@ -41,7 +50,7 @@ const GuestList: FC<GuestList> = ({ guests }) => {
                 key={`guest-${idx}`}
                 guest={g}
                 openModal={openModal}
-                password={password}
+                setGuests={setGuests}
               />
             );
           })
