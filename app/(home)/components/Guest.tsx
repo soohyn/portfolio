@@ -1,4 +1,5 @@
 "use client";
+
 import GuestForm from "@/app/components/GuestForm";
 import GuestList from "@/app/components/GuestList";
 import HighlightingText from "@/app/components/HighlightingText";
@@ -15,7 +16,7 @@ const dummy: Guest[] = [
     message: "안녕하세요~!",
   },
   {
-    id: "id",
+    id: "id2",
     createdAt: Date.now(),
     updatedAt: Date.now(),
     name: "조굼",

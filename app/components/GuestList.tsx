@@ -1,8 +1,11 @@
+"use client";
+
 import React, {
   FC,
   SetStateAction,
   useCallback,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import GuestItem from "./GuestItem";
@@ -16,12 +19,22 @@ interface GuestList {
 
 const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
   const [onConfirm, setOnConfirm] = useState<OnConfirm>(async () => {});
 
   const closeModal = () => {
     setIsModalOpened(false);
+    setError(false);
     setPassword("");
+  };
+
+  const checkPassword = (password: string, postPassword: string) => {
+    if (postPassword === password) {
+      return true;
+    }
+    setError(true);
+    return false;
   };
 
   // 모달을 열면서 파라미터로 confirm 버튼 클릭 시 동작을 받아 저장
@@ -33,10 +46,10 @@ const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
     setOnConfirm(() => confirm);
   };
 
-  const onClickConfirm = useCallback(async () => {
+  const onClickConfirm = async () => {
+    setError(false);
     onConfirm(password);
-    closeModal();
-  }, [isModalOpened]);
+  }
 
   return (
     <>
@@ -51,6 +64,8 @@ const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
                 guest={g}
                 openModal={openModal}
                 setGuests={setGuests}
+                checkPassword={checkPassword}
+                closeModal={closeModal}
               />
             );
           })
@@ -62,11 +77,18 @@ const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
           <span className="text-lg font-semibold ">
             비밀번호를 입력해 주세요
           </span>
+
           <input
             className="border-gray-100 input-style w-full mt-4"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error && (
+            <span className="text-rose-500 text-sm font-semibold mt-2 ml-2">
+              비밀번호를 확인해 주세요.
+            </span>
+          )}
           <div className="flex flex-row mt-4 gap-2">
             <button
               className="button-style-secondary p-1 w-full rounded-md"

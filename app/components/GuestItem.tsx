@@ -1,33 +1,36 @@
+"use client";
+
+import React, { FC, SetStateAction, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { ko } from "date-fns/locale";
-import React, { FC, SetStateAction, useState } from "react";
 import { FiCheck, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { OnConfirm } from "./GuestList";
-import Modal from "./Modal";
 
 interface GuestItemProps {
   guest: Guest;
   openModal: (confirm: OnConfirm) => void;
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
+  closeModal: () => void;
+  checkPassword: (password: string, postPassword: string) => boolean;
 }
 
-const GuestItem: FC<GuestItemProps> = ({ guest, openModal, setGuests }) => {
+const GuestItem: FC<GuestItemProps> = ({
+  guest,
+  openModal,
+  setGuests,
+  closeModal,
+  checkPassword,
+}) => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [message, setMessage] = useState<string>(guest.message);
-
-  const checkPassword = (postPassword: string, password: string) => {
-    if (postPassword === password) {
-      return true;
-    }
-    return false;
-  };
 
   const updateMessage = async (password: string) => {
     try {
       console.log(">>> UPDATE");
       const postPassword = guest.password;
-      checkPassword(postPassword, password);
+
+      if (!checkPassword(password, postPassword)) return;
 
       setGuests((prev) => {
         return prev.map((g, i) => {
@@ -35,7 +38,10 @@ const GuestItem: FC<GuestItemProps> = ({ guest, openModal, setGuests }) => {
           return g;
         });
       });
+
       setIsEditMode(false);
+      closeModal();
+
     } catch (error) {
       console.error(error);
     }
@@ -45,11 +51,14 @@ const GuestItem: FC<GuestItemProps> = ({ guest, openModal, setGuests }) => {
     try {
       console.log(">>> DELETE");
       const postPassword = guest.password;
-      checkPassword(postPassword, password);
+      if (!checkPassword(password, postPassword)) return;
 
       setGuests((prev) => {
         return prev.filter((g, i) => guest.id !== g.id);
       });
+
+      closeModal();
+      
     } catch (error) {
       console.error(error);
     }
