@@ -61,8 +61,19 @@ const GuestForm: FC = () => {
           <input type="submit" value="send" />
         </form>
       </div>
-      <Modal isOpened={modalOpened} onClose={onCloseModal} />
+
+      <Modal isOpened={modalOpened} onClose={onCloseModal} >
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold">저장할까요?</span>
+          <div className="flex flex-row mt-4 gap-2">
+            <button className="button-style-secondary p-1 w-full rounded-md">cancel</button>
+            <button className="button-style w-full rounded-md">confirm</button>
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };
+
+
 export default GuestForm;

@@ -95,7 +95,15 @@
     @apply input-style resize-none;
   }
 
+  .button-style {
+    @apply cursor-pointer mt-4 bg-gray-500 text-gray-50 font-semibold text-lg transition-all hover:bg-gray-400 active:scale-95;
+  }
+
+  .button-style-secondary {
+    @apply cursor-pointer mt-4 bg-gray-200 text-gray-600 font-semibold text-lg transition-all hover:bg-gray-300 active:scale-95;
+  }
+
   form > input[type="submit"] {
-    @apply cursor-pointer mt-4 bg-gray-500 text-gray-50 font-semibold text-lg transition-all hover:bg-gray-400 active:scale-95 focus:bg-gray-400;
+    @apply button-style focus:bg-gray-400;
   }
 }
