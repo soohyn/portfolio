@@ -1,13 +1,19 @@
 "use client";
-import { FC, FormEvent, useState } from "react";
+import React, { FC, FormEvent, SetStateAction, useState } from "react";
 import Modal from "./Modal";
 import MacDotButton from "./MacDotButton";
 
-const GuestForm: FC = () => {
-  const [error, setError] = useState();
-  const [modalOpened, setModalOpened] = useState<boolean>(false);
+interface GuestForm {
+  setGuests: React.Dispatch<SetStateAction<Guest[]>>;
+}
 
-  const onSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
+interface NewGuest extends Partial<Guest> {}
+
+const GuestForm: FC<GuestForm> = ({ setGuests }) => {
+  const [modalOpened, setModalOpened] = useState<boolean>(false);
+  const [formData, setFormData] = useState<NewGuest>();
+
+  const onSubmitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.target as HTMLFormElement);
 
@@ -16,13 +22,16 @@ const GuestForm: FC = () => {
     const password = data.get("password");
     const message = data.get("message");
 
-    if (!(name && email && password && message)) {
-      setError(error);
-    }
+    if (!(name && email && password && message)) return;
 
+    //setFormData(data);
+    //setFormData({ name, email, password, message });
     setModalOpened(true);
+  };
 
+  const createGuest = async () => {
     try {
+      //setGuests();
     } catch (error) {
       console.error(error);
     }
@@ -30,6 +39,12 @@ const GuestForm: FC = () => {
 
   const onCloseModal = () => {
     setModalOpened(false);
+  };
+
+  const onClickConfirm = async () => {
+    await createGuest();
+
+    onCloseModal();
   };
 
   return (
@@ -62,18 +77,24 @@ const GuestForm: FC = () => {
         </form>
       </div>
 
-      <Modal isOpened={modalOpened} onClose={onCloseModal} >
+      <Modal isOpened={modalOpened} onClose={onCloseModal}>
         <div className="flex flex-col">
           <span className="text-lg font-semibold">정말 작성하시겠습니까?</span>
           <div className="flex flex-row mt-4 gap-2">
-            <button className="button-style-secondary p-1 w-full rounded-md">cancel</button>
-            <button className="button-style w-full rounded-md">confirm</button>
+            <button className="button-style-secondary p-1 w-full rounded-md">
+              cancel
+            </button>
+            <button
+              className="button-style w-full rounded-md"
+              onClick={onClickConfirm}
+            >
+              confirm
+            </button>
           </div>
         </div>
       </Modal>
     </>
   );
 };
-
 
 export default GuestForm;
