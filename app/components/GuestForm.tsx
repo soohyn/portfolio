@@ -42,7 +42,7 @@ const GuestForm: FC = () => {
         </div>
         <form
           onSubmit={onSubmitForm}
-          className="p-3 sm:p-5 flex flex-col gap-3 w-full"
+          className="p-3 sm:p-5 flex flex-col gap-3 w-full shadow-inner"
         >
           <input name="name" placeholder="name" className="" type="text" />
           <input name="email" placeholder="email" className="" type="email" />
