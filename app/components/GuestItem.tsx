@@ -3,28 +3,62 @@ import { ko } from "date-fns/locale";
 import { FC, useState } from "react";
 import { FiCheck, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { OnConfirm } from "./GuestList";
+import Modal from "./Modal";
 
 interface GuestItemProps {
   guest: Guest;
+  password: string;
+  openModal: (confirm: OnConfirm) => void;
 }
 
-const GuestItem: FC<GuestItemProps> = ({ guest }) => {
+const GuestItem: FC<GuestItemProps> = ({ guest, password, openModal }) => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [message, setMessage] = useState<string>(guest.message);
 
-  const onClickEditMode = () => {
-    setIsEditMode((prev) => !prev);
+ 
+
+  const checkPassword = (postPassword: string, password: string) => {
+    if (postPassword === password) {
+      return true;
+    }
+    return false;
   };
 
-  const onClickSave = async () => {
+  const updateMessage = async (password: string) => {
     try {
-      setIsEditMode(false);
+      console.log('>>> UPDate')
+      const postPassword = "123";
+      checkPassword(postPassword, password);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const deleteMessage = async (password: string) => {
+    try {
+      console.log('>>> DELETE')
+      const postPassword = "123";
+      checkPassword(postPassword, password);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onClickEditMode = () => {
+    setIsEditMode((prev) => !prev);
+  };
+
+  const onClickSave = () => {
+    openModal(updateMessage);
+  };
+
+  const onClickDelete = () => {
+    openModal(deleteMessage);
+  };
+
   return (
+    <>
     <li className="flex flex-col text-gray-600 p-5 backdrop-blur-md">
       <div className="flex flex-row items-center justify-between">
         <div>
@@ -33,7 +67,7 @@ const GuestItem: FC<GuestItemProps> = ({ guest }) => {
             {formatDistanceToNow(guest.createdAt, { locale: ko })} 전
           </span>
         </div>
-        <button className="icon-button-style">
+        <button className="icon-button-style" onClick={onClickDelete}>
           <FiTrash2 size={16} />
         </button>
       </div>
@@ -75,6 +109,7 @@ const GuestItem: FC<GuestItemProps> = ({ guest }) => {
         )}
       </div>
     </li>
+    </>
   );
 };
 
