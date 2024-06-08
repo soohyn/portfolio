@@ -22,6 +22,8 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
     const password = data.get("password");
     const message = data.get("message");
 
+    console.log(name, email, password, message);
+
     if (!(name && email && password && message)) return;
 
     //setFormData(data);
@@ -68,6 +70,7 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
             className=""
           />
           <textarea
+            name='message'
             className=" resize-none"
             placeholder="message"
             rows={5}
