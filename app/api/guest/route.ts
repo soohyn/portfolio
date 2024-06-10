@@ -1,6 +1,24 @@
-
 import supabaseClient from "@/public/lib/supabaseClient";
+import { url } from "inspector";
 import { NextRequest, NextResponse } from "next/server";
+
+export const GET = async (req: NextRequest) => {
+  try {
+    const response = await supabaseClient.from("guest").select();
+
+    const guests = response.data ?? [];
+
+    if (!guests) {
+      throw "no guests";
+    }
+
+    return NextResponse.json({ guests }, { status: 200 });
+  } catch (error) {
+    console.log(error);
+
+    return NextResponse.json({ message: "Server Error" }, { status: 500 });
+  }
+};
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -14,19 +32,24 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({ message: "Message length is over 300" });
     }
 
-    const response = await supabaseClient.from("guest").upsert({
-      name,
-      email,
-      password,
-      message,
-    }).select().limit(1).single();
+    const response = await supabaseClient
+      .from("guest")
+      .upsert({
+        name,
+        email,
+        password,
+        message,
+      })
+      .select()
+      .limit(1)
+      .single();
 
-    console.log(response)
+    console.log(response);
 
-    const guest = response.data
+    const guest = response.data;
 
-    if(!guest){
-      throw 'not create'
+    if (!guest) {
+      throw "not create";
     }
 
     return NextResponse.json({ guest }, { status: 200 });
