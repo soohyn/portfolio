@@ -4,7 +4,22 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req: NextRequest) => {
   try {
-    const response = await supabaseClient.from("guest").select();
+    const { searchParams } = new URL(req.url);
+    const pageText = searchParams.get("page");
+
+    if (!pageText) {
+      return NextResponse.json({ mssage: "Not exist page" }, { status: 200 });
+    }
+
+    const page = +pageText;
+    const limit = 4;
+
+    const response = await supabaseClient
+      .from("guest")
+      .select()
+      .order("created_at", { ascending: false })
+      .range(0 + (page - 1) * limit, page * limit - 1)
+
 
     const guests = response.data ?? [];
 
