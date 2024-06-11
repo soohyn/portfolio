@@ -27,8 +27,8 @@ interface Skill {
 
 interface Guest {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
   name: string;
   email: string;
   password: string;

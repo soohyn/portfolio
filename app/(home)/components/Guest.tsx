@@ -3,35 +3,19 @@
 import GuestForm from "@/app/components/GuestForm";
 import GuestList from "@/app/components/GuestList";
 import HighlightingText from "@/app/components/HighlightingText";
+import axios from "axios";
 import { FC, useEffect, useState } from "react";
 
-const dummy: Guest[] = [
-  {
-    id: "id",
-    createdAt: Date.now(),
-    updatedAt: Date.now(),
-    name: "조구미",
-    password: "soo",
-    email: "sooheyonjo@gmail.com",
-    message: "안녕하세요~!",
-  },
-  {
-    id: "id2",
-    createdAt: Date.now(),
-    updatedAt: Date.now(),
-    name: "조굼",
-    password: "hyn",
-    email: "soo@gmail.com",
-    message: "프론트엔드 개발자 화이팅!",
-  },
-];
 
 const Guest: FC = () => {
   const [guests, setGuests] = useState<Guest[]>([]);
 
   const prepare = async () => {
     try {
-      setGuests(dummy);
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/guest?page=1`)
+
+      console.log(response)
+      setGuests(response.data.guests ?? []);
     } catch (error) {
       console.error(error);
     }
@@ -48,7 +32,7 @@ const Guest: FC = () => {
           <HighlightingText text="Guest" />
         </h2>
 
-        <div className="flex flex-col md:flex-row mt-20 gap-12  w-full">
+        <div className="flex flex-col md:flex-row mt-20 gap-12  w-full md:items-start">
           <GuestForm setGuests={setGuests} />
           <GuestList guests={guests} setGuests={setGuests} />
         </div>

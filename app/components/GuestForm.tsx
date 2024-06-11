@@ -37,7 +37,13 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
         { headers: { "Content-Type": "application/json" } }
       );
 
-      console.log(response);
+      const newGuest = response.data.guest;
+
+      setGuests((prev) => {
+        const newList = [newGuest, ...prev]
+
+        return newList.slice(0,4)
+      });
     } catch (error) {
       console.error(error);
     }
@@ -55,7 +61,7 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
 
   return (
     <>
-      <div className=" bg-gray-100 shadow-xl rounded-md backdrop-blur-xl w-full inner-shadow overflow-hidden ">
+      <div className="flex flex-col bg-gray-100 shadow-xl rounded-md backdrop-blur-xl w-full inner-shadow overflow-hidden ">
         <div className="flex flex-row bg-gray-300 w-full p-3 gap-3 items-center shadow-inner">
           <MacDotButton color={"#fb4646"} />
           <MacDotButton color={"#fcb024"} />

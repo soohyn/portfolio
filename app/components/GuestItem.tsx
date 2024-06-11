@@ -88,7 +88,7 @@ const GuestItem: FC<GuestItemProps> = ({
           <div>
             <span className="text-lg font-bold">🌻 {guest.name}</span>
             <span className="ml-2 text-sm text-gray-500">
-              {formatDistanceToNow(guest.createdAt, { locale: ko })} 전
+              {formatDistanceToNow(+ new Date(guest.created_at), { locale: ko })} 전
             </span>
           </div>
           <button className="icon-button-style" onClick={onClickDelete}>
