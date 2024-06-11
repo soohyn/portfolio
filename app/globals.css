@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
   }
 
+  ::selection{
+    @apply bg-yellow-400/20
+  }
+
   .bg-clip-text {
     -webkit-background-clip: text;
     background-clip: text;
