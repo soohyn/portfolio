@@ -2,6 +2,7 @@
 import React, { FC, FormEvent, SetStateAction, useState } from "react";
 import Modal from "./Modal";
 import MacDotButton from "./MacDotButton";
+import axios from "axios";
 
 interface GuestForm {
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
@@ -17,23 +18,26 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
     e.preventDefault();
     const data = new FormData(e.target as HTMLFormElement);
 
-    const name = data.get("name");
-    const email = data.get("email");
-    const password = data.get("password");
-    const message = data.get("message");
-
-    console.log(name, email, password, message);
+    const name = data.get("name") + "";
+    const email = data.get("email") + "";
+    const password = data.get("password") + "";
+    const message = data.get("message") + "";
 
     if (!(name && email && password && message)) return;
 
-    //setFormData(data);
-    //setFormData({ name, email, password, message });
+    setFormData({ name, email, password, message });
     setModalOpened(true);
   };
 
   const createGuest = async () => {
     try {
-      //setGuests();
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest`,
+        formData,
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -70,7 +74,7 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
             className=""
           />
           <textarea
-            name='message'
+            name="message"
             className=" resize-none"
             placeholder="message"
             rows={5}
