@@ -36,7 +36,7 @@ export const GET = async (req: NextRequest) => {
 
 export const POST = async (req: NextRequest) => {
   try {
-    const { name, email, password, message } = await req.json();
+    const { name, email, password, message,is_secret } = await req.json();
 
     if (!(name && email && password && message)) {
       return NextResponse.json({ message: "Not exist data." }, { status: 200 });
@@ -53,6 +53,7 @@ export const POST = async (req: NextRequest) => {
         email,
         password,
         message,
+        is_secret
       })
       .select()
       .limit(1)

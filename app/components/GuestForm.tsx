@@ -3,6 +3,7 @@ import React, { FC, FormEvent, SetStateAction, useState } from "react";
 import Modal from "./Modal";
 import MacDotButton from "./MacDotButton";
 import axios from "axios";
+import { CgCheck } from "react-icons/cg";
 
 interface GuestForm {
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
@@ -13,6 +14,7 @@ interface NewGuest extends Partial<Guest> {}
 const GuestForm: FC<GuestForm> = ({ setGuests }) => {
   const [modalOpened, setModalOpened] = useState<boolean>(false);
   const [formData, setFormData] = useState<NewGuest>();
+  const [isSecretChecked, setIsSecretChecked] = useState(false);
 
   const onSubmitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,10 +24,11 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
     const email = data.get("email") + "";
     const password = data.get("password") + "";
     const message = data.get("message") + "";
+    const is_secret = !!data.get("is_secret");
 
     if (!(name && email && password && message)) return;
 
-    setFormData({ name, email, password, message });
+    setFormData({ name, email, password, message, is_secret });
     setModalOpened(true);
   };
 
@@ -40,9 +43,9 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
       const newGuest = response.data.guest;
 
       setGuests((prev) => {
-        const newList = [newGuest, ...prev]
+        const newList = [newGuest, ...prev];
 
-        return newList.slice(0,4)
+        return newList.slice(0, 4);
       });
     } catch (error) {
       console.error(error);
@@ -57,6 +60,10 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
     await createGuest();
 
     onCloseModal();
+  };
+
+  const onClickIsSecret = () => {
+    setIsSecretChecked((prev) => !prev);
   };
 
   return (
@@ -86,6 +93,25 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
             rows={5}
             maxLength={300}
           />
+          <div className="flex flex-row items-center gap-2 justify-end">
+            <input
+              id={"checkbox"}
+              defaultChecked={false}
+              name="is_secret"
+              checked={isSecretChecked}
+              type="checkbox"
+              className="hidden"
+              onChange={(e) => {
+                setIsSecretChecked(e.target.checked);
+              }}
+            />
+            <button className={`w-4 h-4 border-1 ${isSecretChecked ? 'bg-gray-600 ' :'bg-white'} rounded-sm`} onClick={onClickIsSecret}>
+              {isSecretChecked && <CgCheck className='text-white' size={16} />}
+            </button>
+            <label htmlFor="checkbox" className="cursor-pointer select-none text-sm">
+              비밀이야 🔒
+            </label>
+          </div>
           <input type="submit" value="send" />
         </form>
       </div>
@@ -94,7 +120,10 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
         <div className="flex flex-col">
           <span className="text-lg font-semibold">정말 작성하시겠습니까?</span>
           <div className="flex flex-row mt-4 gap-2">
-            <button className="button-style-secondary p-1 w-full rounded-md" onClick={onCloseModal}>
+            <button
+              className="button-style-secondary p-1 w-full rounded-md"
+              onClick={onCloseModal}
+            >
               cancel
             </button>
             <button

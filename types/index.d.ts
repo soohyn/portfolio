@@ -33,4 +33,5 @@ interface Guest {
   email: string;
   password: string;
   message: string;
+  is_secret:boolean;
 }
