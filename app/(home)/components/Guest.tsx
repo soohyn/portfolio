@@ -2,6 +2,7 @@
 
 import GuestForm from "@/app/components/GuestForm";
 import GuestList from "@/app/components/GuestList";
+import GuestListNavigation from "@/app/components/GuestListNavigation";
 import HighlightingText from "@/app/components/HighlightingText";
 import axios from "axios";
 import { FC, useEffect, useState } from "react";
@@ -36,7 +37,14 @@ const Guest: FC = () => {
 
         <div className="flex flex-col md:grid md:grid-cols-2 mt-20 gap-12  w-full md:items-start">
           <GuestForm setGuests={setGuests} />
-          <GuestList guests={guests} setGuests={setGuests} prepare={prepare} />
+          <div className="flex flex-col items-center">
+            <GuestList
+              guests={guests}
+              setGuests={setGuests}
+              prepare={prepare}
+            />
+            <GuestListNavigation page={page} setPage={setPage} />
+          </div>
         </div>
       </div>
     </section>
