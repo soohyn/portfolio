@@ -17,7 +17,6 @@ const Guest: FC = () => {
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest?page=${page}`
       );
 
-      console.log(response);
       setGuests(response.data.guests ?? []);
     } catch (error) {
       console.error(error);

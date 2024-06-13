@@ -96,7 +96,6 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
           <div className="flex flex-row items-center gap-2 justify-end">
             <input
               id={"checkbox"}
-              defaultChecked={false}
               name="is_secret"
               checked={isSecretChecked}
               type="checkbox"

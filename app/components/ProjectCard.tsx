@@ -9,9 +9,6 @@ interface ProjectCardProps {
   idx: number;
 }
 
-// 포스트잍은 촌스러운거 같아...
-// 걍 박스 아니면 포스트잍...
-
 const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
   return (
     <li
@@ -20,6 +17,8 @@ const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
       <div className="flex w-full h-[160px] sm:h-[200px] relative">
         <Image
           fill
+          sizes="100%"
+          priority={true}
           className="w-full h-full object-cover select-none"
           src={project.thumbnail}
           alt={project.name}

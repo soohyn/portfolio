@@ -113,7 +113,6 @@ const GuestItem: FC<GuestItemProps> = ({
   };
 
   useEffect(() => {
-    console.log(isSecret);
     setMessage(isSecret ? "비밀글 입니다" : guest.message);
   }, [isSecret]);
 
