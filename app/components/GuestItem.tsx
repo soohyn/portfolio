@@ -74,9 +74,15 @@ const GuestItem: FC<GuestItemProps> = ({
   };
 
   const getAuth = async (password: string) => {
-
     if (!checkPassword(password, guest.password)) return;
-    
+
+    const result = await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest/auth?id=${guest.id}`,
+      { password }
+    );
+
+    if(!result.data) return
+
     setIsSecret(false);
     closeModal();
   };
@@ -107,7 +113,7 @@ const GuestItem: FC<GuestItemProps> = ({
   };
 
   useEffect(() => {
-    console.log(isSecret)
+    console.log(isSecret);
     setMessage(isSecret ? "비밀글 입니다" : guest.message);
   }, [isSecret]);
 
