@@ -56,23 +56,19 @@ const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
 
   return (
     <>
-      <ul className="flex flex-col w-full gap-8">
-        {guests.length <= 0 ? (
-          <span className="text-2xl self-center mt-20">🌼 🌻 🌼 🌻 🌼</span>
-        ) : (
-          guests.map((g, idx) => {
-            return (
-              <GuestItem
-                key={`guest-${idx}`}
-                guest={g}
-                openModal={openModal}
-                setGuests={setGuests}
-                checkPassword={checkPassword}
-                closeModal={closeModal}
-              />
-            );
-          })
-        )}
+      <ul className="flex flex-col w-full gap-5">
+        {guests.map((g, idx) => {
+          return (
+            <GuestItem
+              key={`guest-${idx}`}
+              guest={g}
+              openModal={openModal}
+              setGuests={setGuests}
+              checkPassword={checkPassword}
+              closeModal={closeModal}
+            />
+          );
+        })}
       </ul>
 
       <Modal isOpened={isModalOpened} onClose={closeModal}>

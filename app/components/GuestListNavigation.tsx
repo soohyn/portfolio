@@ -6,11 +6,13 @@ import { BiArrowFromLeft, BiArrowFromRight } from "react-icons/bi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 interface GuestListNavigationProps {
+  guests: Guest[];
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const GuestListNavigation: FC<GuestListNavigationProps> = ({
+  guests,
   page,
   setPage,
 }) => {
@@ -42,7 +44,7 @@ const GuestListNavigation: FC<GuestListNavigationProps> = ({
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest/page-count`
       );
 
-      setPageCount(response.data.pageCount)
+      setPageCount(response.data.pageCount);
     } catch (error) {
       console.error(error);
     }
@@ -50,7 +52,7 @@ const GuestListNavigation: FC<GuestListNavigationProps> = ({
 
   useEffect(() => {
     getPageCount();
-  }, []);
+  }, [guests]);
 
   return (
     <div className="flex flex-row items-center gap-3">

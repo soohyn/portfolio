@@ -26,7 +26,7 @@ const Guest: FC = () => {
 
   useEffect(() => {
     prepare();
-  }, []);
+  }, [page]);
 
   return (
     <section id="guest-section" className="section-layout">
@@ -37,13 +37,19 @@ const Guest: FC = () => {
 
         <div className="flex flex-col md:grid md:grid-cols-2 mt-20 gap-12  w-full md:items-start">
           <GuestForm setGuests={setGuests} />
-          <div className="flex flex-col items-center">
-            <GuestList
-              guests={guests}
-              setGuests={setGuests}
-              prepare={prepare}
-            />
-            <GuestListNavigation page={page} setPage={setPage} />
+          <div className="flex flex-col items-center w-full">
+            {guests.length <= 0 ? (
+              <span className="text-2xl self-center mt-20">🌼 🌻 🌼 🌻 🌼</span>
+            ) : (
+              <>
+                <GuestList
+                  guests={guests}
+                  setGuests={setGuests}
+                  prepare={prepare}
+                />
+                <GuestListNavigation guests={guests} page={page} setPage={setPage} />
+              </>
+            )}
           </div>
         </div>
       </div>

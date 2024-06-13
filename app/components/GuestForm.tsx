@@ -94,7 +94,7 @@ const GuestForm: FC<GuestForm> = ({ setGuests }) => {
         <div className="flex flex-col">
           <span className="text-lg font-semibold">정말 작성하시겠습니까?</span>
           <div className="flex flex-row mt-4 gap-2">
-            <button className="button-style-secondary p-1 w-full rounded-md">
+            <button className="button-style-secondary p-1 w-full rounded-md" onClick={onCloseModal}>
               cancel
             </button>
             <button

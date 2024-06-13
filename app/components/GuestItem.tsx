@@ -91,7 +91,7 @@ const GuestItem: FC<GuestItemProps> = ({
 
   return (
     <>
-      <li className="w-full flex flex-col text-gray-600 p-5 backdrop-blur-md">
+      <li className="w-full flex flex-col text-gray-600 p-4 backdrop-blur-md">
         <div className="flex flex-row items-center justify-between">
           <div>
             <span className="text-lg font-bold">🌻 {guest.name}</span>
