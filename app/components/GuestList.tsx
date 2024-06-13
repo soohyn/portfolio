@@ -10,6 +10,7 @@ import React, {
 } from "react";
 import GuestItem from "./GuestItem";
 import Modal from "./Modal";
+import ConfirmPasswordModalContents from "./ConfirmPasswordModalContents";
 
 export type OnConfirm = (password: string) => Promise<void>;
 interface GuestList {
@@ -75,37 +76,13 @@ const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
       </ul>
 
       <Modal isOpened={isModalOpened} onClose={closeModal}>
-        <div>
-          <span className="text-lg font-semibold ">
-            비밀번호를 입력해 주세요
-          </span>
-
-          <input
-            className="border-gray-100 input-style w-full mt-4"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {error && (
-            <span className="text-rose-500 text-sm font-semibold mt-2 ml-2">
-              비밀번호를 확인해 주세요.
-            </span>
-          )}
-          <div className="flex flex-row mt-4 gap-2">
-            <button
-              className="button-style-secondary p-1 w-full rounded-md"
-              onClick={closeModal}
-            >
-              cancel
-            </button>
-            <button
-              className="button-style w-full rounded-md"
-              onClick={onClickConfirm}
-            >
-              confirm
-            </button>
-          </div>
-        </div>
+        <ConfirmPasswordModalContents
+          password={password}
+          error={error}
+          setPassword={setPassword}
+          onClickConfirm={onClickConfirm}
+          closeModal={closeModal}
+        />
       </Modal>
     </>
   );
