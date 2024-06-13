@@ -1,3 +1,4 @@
+import { PAGE_LIMIT } from "@/public/config";
 import supabaseClient from "@/public/lib/supabaseClient";
 import { url } from "inspector";
 import { NextRequest, NextResponse } from "next/server";
@@ -12,14 +13,12 @@ export const GET = async (req: NextRequest) => {
     }
 
     const page = +pageText;
-    const limit = 4;
 
     const response = await supabaseClient
       .from("guest")
       .select()
       .order("created_at", { ascending: false })
-      .range(0 + (page - 1) * limit, page * limit - 1)
-
+      .range(0 + (page - 1) * PAGE_LIMIT, page * PAGE_LIMIT - 1);
 
     const guests = response.data ?? [];
 

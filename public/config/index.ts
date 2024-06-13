@@ -3,6 +3,8 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/soohyeonjo";
 export const TISTORY_URL = "";
 export const GMAIL_ADDR = "sooheyonjo@gmail.com";
 
+export const PAGE_LIMIT = 4;
+
 export const profile = {
   name: "Soohyeon Jo",
   nicknam: "Soohyn",
@@ -22,7 +24,6 @@ export const skills: Skill[] = [
   { name: "MongoDB", image: "/images/mongodb.png" },
   { name: "Supabase", image: "/images/supabase.svg" },
   { name: "Redux", image: "/images/redux.svg" },
-
 ];
 
 export const styleSkill: Skill[] = [
@@ -35,8 +36,8 @@ export const studySkills: Skill[] = [
   { name: "React Native" },
   { name: "React Query" },
   { name: "AWS" },
-  { name: "Solidity", image:"/images/solidity.svg" },
-  { name: "Electron", image:"/images/electron.svg" },
+  { name: "Solidity", image: "/images/solidity.svg" },
+  { name: "Electron", image: "/images/electron.svg" },
   { name: "Firebase" },
   { name: "Express" },
   { name: "PWA" },
@@ -48,7 +49,6 @@ export const studySkills: Skill[] = [
   { name: "C" },
   { name: "Java" },
   { name: "Kotlin" },
-
 ];
 
 export const toolSkill: Skill[] = [
