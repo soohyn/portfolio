@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, SetStateAction, useState } from "react";
+import React, { FC, SetStateAction, useEffect, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { ko } from "date-fns/locale";
 import { FiCheck, FiEdit2, FiTrash2, FiX } from "react-icons/fi";
@@ -14,6 +14,7 @@ interface GuestItemProps {
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
   closeModal: () => void;
   checkPassword: (password: string, postPassword: string) => boolean;
+  prepare: () => Promise<void>;
 }
 
 const GuestItem: FC<GuestItemProps> = ({
@@ -22,14 +23,16 @@ const GuestItem: FC<GuestItemProps> = ({
   setGuests,
   closeModal,
   checkPassword,
+  prepare,
 }) => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [message, setMessage] = useState<string>(guest.message);
   const [open, setOpen] = useState<boolean>(false);
+  const [isSecret, setIsSecret] = useState<boolean>(guest.is_secret);
 
   const updateMessage = async (password: string) => {
     try {
-      console.log(">>> UPDATE");
+      if (isSecret) return;
       const postPassword = guest.password;
 
       if (!checkPassword(password, postPassword)) return;
@@ -50,6 +53,7 @@ const GuestItem: FC<GuestItemProps> = ({
 
   const deleteMessage = async (password: string) => {
     try {
+      if (isSecret) return;
       const postPassword = guest.password;
       if (!checkPassword(password, postPassword)) return;
 
@@ -62,14 +66,27 @@ const GuestItem: FC<GuestItemProps> = ({
         return prev.filter((g, i) => guest.id !== g.id);
       });
 
+      await prepare();
       closeModal();
     } catch (error) {
       console.error(error);
     }
   };
 
+  const getAuth = async (password: string) => {
+
+    if (!checkPassword(password, guest.password)) return;
+    
+    setIsSecret(false);
+    closeModal();
+  };
+
   const onClickOpen = () => {
     setOpen((prev) => !prev);
+  };
+
+  const onClickUnlock = () => {
+    openModal(getAuth);
   };
 
   const onClickEditMode = () => {
@@ -89,12 +106,33 @@ const GuestItem: FC<GuestItemProps> = ({
     openModal(deleteMessage);
   };
 
+  useEffect(() => {
+    console.log(isSecret)
+    setMessage(isSecret ? "비밀글 입니다" : guest.message);
+  }, [isSecret]);
+
   return (
-    <>
-      <li className="w-full flex flex-col text-gray-600 p-4 backdrop-blur-md">
+    <div className=" relative">
+      {isSecret && (
+        <div className="absolute z-10 top-0 bottom-0 left-0 right-0 text-center flex items-center justify-center">
+          <button
+            className="icon-button-style text-4xl"
+            onClick={onClickUnlock}
+          >
+            🔒
+          </button>
+        </div>
+      )}
+      <li
+        className={`w-full flex flex-col text-gray-600 p-4 backdrop-blur-md rounded-md ${
+          isSecret && "blur-md"
+        }`}
+      >
         <div className="flex flex-row items-center justify-between">
           <div>
-            <span className="text-lg font-bold">🌻 {guest.name}</span>
+            <span className="text-lg font-bold">
+              🌻 {isSecret ? "비-밀" : guest.name}
+            </span>
             <span className="ml-2 text-sm text-gray-500">
               {formatDistanceToNow(+new Date(guest.created_at), { locale: ko })}{" "}
               전
@@ -131,7 +169,7 @@ const GuestItem: FC<GuestItemProps> = ({
                   open ? "whitespace-pre-wrap break-words" : "truncate"
                 }`}
               >
-                {guest.message}
+                {isSecret ? "비밀글 입니다" : guest.message}
               </div>
             )}
           </div>
@@ -153,7 +191,7 @@ const GuestItem: FC<GuestItemProps> = ({
           </div>
         </div>
       </li>
-    </>
+    </div>
   );
 };
 

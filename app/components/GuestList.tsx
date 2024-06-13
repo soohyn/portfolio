@@ -16,7 +16,7 @@ export type OnConfirm = (password: string) => Promise<void>;
 interface GuestList {
   guests: Guest[];
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
-  prepare: () => void;
+  prepare: () => Promise<void>;
 }
 
 const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
@@ -51,7 +51,6 @@ const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
   const onClickConfirm = async () => {
     setError(false);
     await onConfirm(password);
-    await prepare();
   };
 
   return (
@@ -66,6 +65,7 @@ const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
               setGuests={setGuests}
               checkPassword={checkPassword}
               closeModal={closeModal}
+              prepare={prepare}
             />
           );
         })}
