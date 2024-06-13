@@ -15,9 +15,10 @@ export type OnConfirm = (password: string) => Promise<void>;
 interface GuestList {
   guests: Guest[];
   setGuests: React.Dispatch<SetStateAction<Guest[]>>;
+  prepare: () => void;
 }
 
-const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
+const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
   const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
@@ -48,8 +49,9 @@ const GuestList: FC<GuestList> = ({ guests, setGuests }) => {
 
   const onClickConfirm = async () => {
     setError(false);
-    onConfirm(password);
-  }
+    await onConfirm(password);
+    await prepare();
+  };
 
   return (
     <>

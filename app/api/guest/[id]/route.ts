@@ -1,7 +1,7 @@
 import supabaseClient from "@/public/lib/supabaseClient";
 import { NextRequest, NextResponse } from "next/server";
 
-export const DELETE = async (
+export const POST = async (
   req: NextRequest,
   { params }: { params: { id: string } }
 ) => {
