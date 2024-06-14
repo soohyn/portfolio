@@ -16,7 +16,7 @@ export const GET = async (req: NextRequest) => {
     const guestCount = response.data.length;
     const pageCount = guestCount > 1 ? Math.ceil(guestCount / PAGE_LIMIT) : 1;
 
-    return NextResponse.json({ pageCount, guestCount, guests: response.data });
+    return NextResponse.json({ pageCount });
   } catch (error) {
     console.error(error);
 
