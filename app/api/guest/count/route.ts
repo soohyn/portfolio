@@ -22,7 +22,7 @@ export const GET = async (req: NextRequest) => {
       throw "no guests";
     }
 
-    const pageCount = guests.length > 1 ? guests.length / PAGE_LIMIT : 1;
+    const pageCount = guests.length > 1 ? Math.ceil(guests.length / PAGE_LIMIT) : 1;
 
     return NextResponse.json({ pageCount }, { status: 200 });
   } catch (error) {
