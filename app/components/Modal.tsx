@@ -32,7 +32,7 @@ const Modal: FC<ModalProps> = ({ isOpened, children, onClose }) => {
     <div
       className={`${
         isOpened ? "" : "hidden"
-      }  backdrop-blur-md flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 z-10 p-4`}
+      }  backdrop-blur-md flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 z-20 p-4`}
       onClick={onClickClose}
     >
       <div
