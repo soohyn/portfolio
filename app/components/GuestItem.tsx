@@ -37,6 +37,13 @@ const GuestItem: FC<GuestItemProps> = ({
 
       if (!checkPassword(password, postPassword)) return;
 
+      const response = await axios.put(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest/${guest.id}`,
+        { message }
+      );
+
+      console.log(response.data);
+
       setGuests((prev) => {
         return prev.map((g, i) => {
           if (guest.id === g.id) return { ...g, message };
@@ -81,7 +88,7 @@ const GuestItem: FC<GuestItemProps> = ({
       { password }
     );
 
-    if(!result.data) return
+    if (!result.data) return;
 
     setIsSecret(false);
     closeModal();
