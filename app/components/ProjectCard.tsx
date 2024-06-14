@@ -44,7 +44,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ idx, project }) => {
           })}
         </ul>
       </div>
-      <div className=" w-[120px] h-[40px] absolute -top-5 left-[38%] bg-amber-200 shadow-sm shadow-inner opacity-50"></div>
+      <div className=" absolute -top-5 left-0 right-0 flex justify-center">
+        <div className=" w-[120px] h-[40px] bg-amber-200 shadow-sm shadow-inner opacity-50"></div>
+      </div>
     </li>
   );
 };
