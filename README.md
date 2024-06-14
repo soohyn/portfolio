@@ -9,5 +9,5 @@ Hi! This is <a href='https://soohyn.com' target='__blank' style='color:gray'>Soo
 - NextJS @14
 - Typescript
 - Tailwindcss
-- 🚧 Supabase
+- Supabase
 - 🚧 Google Analytics
