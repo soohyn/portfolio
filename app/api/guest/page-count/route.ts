@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req: NextRequest) => {
   try {
-    const response = await supabaseClient.from("guest").select("*");
+    const response = await supabaseClient.from("guest").select();
 
     if (!response.data) {
       throw "no data";
@@ -13,7 +13,7 @@ export const GET = async (req: NextRequest) => {
     const guestCount = response.data.length;
     const pageCount = guestCount > 1 ? Math.ceil(guestCount / PAGE_LIMIT) : 1;
 
-    return NextResponse.json({ pageCount });
+    return NextResponse.json({ pageCount, guestCount, guests: response.data });
   } catch (error) {
     console.error(error);
 
