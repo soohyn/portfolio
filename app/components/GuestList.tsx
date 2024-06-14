@@ -59,7 +59,7 @@ const GuestList: FC<GuestList> = ({ guests, setGuests, prepare }) => {
         {guests.map((g, idx) => {
           return (
             <GuestItem
-              key={`guest-${idx}`}
+              key={`guest-${g.id}`}
               guest={g}
               openModal={openModal}
               setGuests={setGuests}
