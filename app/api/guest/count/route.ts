@@ -2,15 +2,10 @@ import { PAGE_LIMIT } from "@/public/config";
 import supabaseClient from "@/public/lib/supabaseClient";
 import { NextRequest, NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic'
+
 export const GET = async (req: NextRequest) => {
   try {
-    const { searchParams } = new URL(req.url);
-    const pageText = searchParams.get("page");
-
-    if (!pageText) {
-      return NextResponse.json({ mssage: "Not exist page" }, { status: 200 });
-    }
-
     const response = await supabaseClient
       .from("guest")
       .select()
