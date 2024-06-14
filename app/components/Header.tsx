@@ -78,7 +78,7 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`backdrop-blur-md fixed top-0 w-full z-20 transition-all ${
+      className={`backdrop-blur-md fixed top-0 w-full z-30 transition-all ${
         scrollY > 0 && "header-inner-shadow"
       }`}
     >
