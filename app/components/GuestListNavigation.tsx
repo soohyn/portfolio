@@ -40,9 +40,11 @@ const GuestListNavigation: FC<GuestListNavigationProps> = ({
 
   const getPageCount = async () => {
     try {
+      console.log('>>1')
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/guest/page-count`
       );
+      console.log('>>', response.data.pageCount)
 
       setPageCount(response.data.pageCount);
     } catch (error) {
@@ -51,7 +53,9 @@ const GuestListNavigation: FC<GuestListNavigationProps> = ({
   };
 
   useEffect(() => {
+
     getPageCount();
+
   }, [guests]);
 
   return (
