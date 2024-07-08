@@ -6,6 +6,7 @@ interface Project {
   skills: string[];
   thumbnail: string;
   isTeam: boolean;
+  isDone: boolean;
 }
 
 interface Career {
@@ -33,5 +34,5 @@ interface Guest {
   email: string;
   password: string;
   message: string;
-  is_secret:boolean;
+  is_secret: boolean;
 }
