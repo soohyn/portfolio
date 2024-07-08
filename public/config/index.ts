@@ -36,6 +36,7 @@ export const studySkills: Skill[] = [
   { name: "React Native" },
   { name: "React Query" },
   { name: "AWS" },
+  { name: "Recoil" },
   { name: "Solidity", image: "/images/solidity.svg" },
   { name: "Electron", image: "/images/electron.svg" },
   { name: "Firebase" },
