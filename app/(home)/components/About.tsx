@@ -12,7 +12,7 @@ const About: FC = () => {
             Front-end Developer
           </h2>
           <h2 className="text-4xl sm:text-7xl font-extrabold">
-            <HighlightingText text={"Soohyeon Jo"} />
+            <HighlightingText text={"Soohyun Jo"} />
           </h2>
           <div className="flex flex-col whitespace-pre-wrap break-words pt-20 sm:text-lg font-semibold gap-4">
             <span>{"안녕하세요! 프론트엔드 개발자 조수현 입니다."}</span>
